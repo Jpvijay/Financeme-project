@@ -25,7 +25,7 @@ pipeline {
     stage('Docker Image Creation') {
       steps {
            echo 'This is for Docker image build'
-           sh 'docker build -t vijayhub11/financeme1:latest .'
+           sh 'docker build -t vijayhub11/financeme2:latest .'
             }
           }
     stage('Login to Dockerhub') {
@@ -37,7 +37,7 @@ pipeline {
 }
     stage('Push the Docker image') {
       steps {
-        sh 'docker push vijayhub11/financeme1:latest'
+        sh 'docker push vijayhub11/financeme2:latest'
                                 }
             }
     stage('Ansible Playbook') {
