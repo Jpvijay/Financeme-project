@@ -7,7 +7,7 @@ pipeline {
     stage('Git checkout') {
       steps {
          echo 'This is for cloning the gitrepo'
-         git branch: 'main', url: 'https://github.com/Jpvijay/InsureMe-demo.git'
+         git branch: 'main', url: 'https://github.com/Jpvijay/Financeme-project.git'
                           }
             }
     stage('Maven Package') {
@@ -25,7 +25,7 @@ pipeline {
     stage('Docker Image Creation') {
       steps {
            echo 'This is for Docker image build'
-           sh 'docker build -t vijayhub11/insureme:latest .'
+           sh 'docker build -t vijayhub11/financeme:latest .'
             }
           }
     stage('Login to Dockerhub') {
@@ -37,7 +37,7 @@ pipeline {
 }
     stage('Push the Docker image') {
       steps {
-        sh 'docker push vijayhub11/insureme:latest'
+        sh 'docker push vijayhub11/financeme:latest'
                                 }
             }
     stage('Ansible Playbook') {
